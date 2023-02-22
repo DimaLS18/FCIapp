@@ -5,18 +5,15 @@
 //  Created by Dima Kovrigin on 24.01.2023.
 //
 
-import SwiftUI
+
 
 import SwiftUI
 
 struct MainView: View {
 
-
-
     var body: some View {
 
-        ScrollView(.vertical, showsIndicators: false, content:
-                    {
+        ScrollView(.vertical, showsIndicators: false, content: {
             StretchableHeader(image: Image("5"))
                 .scaledToFill()
                 .mask(Text("ИНТЕР"))
@@ -28,19 +25,9 @@ struct MainView: View {
                 .scaledToFill()
                 .frame(width: 350, height: 350, alignment: .center)
                 .padding(.bottom, 10)
-
-//            Image("5")
-//                .scaledToFill()
-//                .mask(Text("ЧЕМПИОН 2017"))
-//                .fontWeight(.bold)
-//                .font(.system(size: 50))
-//                .foregroundColor(.yellow)
-//                .shadow(radius: 10)
         })
-
-
+        .background(Color.black) // модификатор заднего фона
     }
-    
 }
 
 

@@ -19,6 +19,7 @@
 		2D479BA62989353700C414A2 /* CircleImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D479BA32989353700C414A2 /* CircleImage.swift */; };
 		2D479BA72989353700C414A2 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D479BA42989353700C414A2 /* MapView.swift */; };
 		2D479BA82989353700C414A2 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2D479BA52989353700C414A2 /* WebView.swift */; };
+		2DC71280299CA0FB0080D36C /* Product.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DC7127F299CA0FB0080D36C /* Product.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		2D479BA32989353700C414A2 /* CircleImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleImage.swift; sourceTree = "<group>"; };
 		2D479BA42989353700C414A2 /* MapView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
 		2D479BA52989353700C414A2 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		2DC7127F299CA0FB0080D36C /* Product.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Product.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +69,7 @@
 		2D479B882989343300C414A2 /* FCIapp */ = {
 			isa = PBXGroup;
 			children = (
+				2DC7127E299CA0DB0080D36C /* Model */,
 				2D479B97298934D900C414A2 /* View */,
 				2D479B892989343300C414A2 /* FCIappApp.swift */,
 				2D479B8B2989343300C414A2 /* ContentView.swift */,
@@ -105,6 +108,14 @@
 				2D479BA52989353700C414A2 /* WebView.swift */,
 			);
 			path = HellperView;
+			sourceTree = "<group>";
+		};
+		2DC7127E299CA0DB0080D36C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2DC7127F299CA0FB0080D36C /* Product.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -182,6 +193,7 @@
 				2D479BA62989353700C414A2 /* CircleImage.swift in Sources */,
 				2D479BA02989351C00C414A2 /* AboutUsView.swift in Sources */,
 				2D479B9A298934F900C414A2 /* MainView.swift in Sources */,
+				2DC71280299CA0FB0080D36C /* Product.swift in Sources */,
 				2D479B8A2989343300C414A2 /* FCIappApp.swift in Sources */,
 				2D479B9F2989351C00C414A2 /* TournamentView.swift in Sources */,
 				2D479BA12989351C00C414A2 /* TeamView.swift in Sources */,
@@ -321,6 +333,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -350,6 +364,8 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarStyle = UIStatusBarStyleDarkContent;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
