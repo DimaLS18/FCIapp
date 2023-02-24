@@ -28,22 +28,25 @@ struct PlayersByPositionView: View {
                     teamImage
                         .resizable()
                         .scaledToFill()
-                       .frame(height: 200)
+                        .frame(height: 200)
 
                     Spacer()
                 }
             ) {
-                Section(header: Text("Forwards")) {
-                    PlayerRowView(players: players.filter { $0.position == "Forward" })
-                }
-                Section(header: Text("Midfielders")) {
-                    PlayerRowView(players: players.filter { $0.position == "Midfielder" })
+                Section(header: Text("Goalkeepers")) {
+                    PlayerRowView(players: players.filter { $0.position == "Goalkeeper" })
                 }
                 Section(header: Text("Defenders")) {
                     PlayerRowView(players: players.filter { $0.position == "Defender" })
                 }
-                Section(header: Text("Goalkeepers")) {
-                    PlayerRowView(players: players.filter { $0.position == "Goalkeeper" })
+                Section(header: Text("Midfielders")) {
+                    PlayerRowView(players: players.filter { $0.position == "Midfielder" })
+                }
+                Section(header: Text("Forwards")) {
+                    PlayerRowView(players: players.filter { $0.position == "Forward" })
+                }
+                Section(header: Text("Coaching Staff")) {
+                    PlayerRowView(players: players.filter { $0.position == "Coach" })
                 }
             }
             .listStyle(InsetGroupedListStyle())

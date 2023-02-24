@@ -36,6 +36,9 @@ struct AboutUsView: View {
 
                 Text("телефон: +7 (49643) 5-90-81")
                     .padding(.top)
+
+                Text("Набор в детские группа: 8 (916) 553-94-41")
+                    .padding(.top)
             }
 
 

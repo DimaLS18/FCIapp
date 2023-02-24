@@ -11,12 +11,14 @@ import SwiftUI
 
 struct MainView: View {
 
+    @State private var isInter = true
+
     var body: some View {
 
         ScrollView(.vertical, showsIndicators: false, content: {
-            StretchableHeader(image: Image("5"))
+            StretchableHeader(image: Image("5"), isInter: isInter)
                 .scaledToFill()
-                .mask(Text("ИНТЕР"))
+                .mask(Text(isInter ? "МЫ" : "ИНТЕР"))
                 .fontWeight(.bold)
                 .font(.system(size: 120))
                 .foregroundColor(.yellow)
@@ -25,26 +27,19 @@ struct MainView: View {
                 .scaledToFill()
                 .frame(width: 350, height: 350, alignment: .center)
                 .padding(.bottom, 10)
+                .onTapGesture {
+                    isInter.toggle()
+                }
         })
         .background(Color.black) // модификатор заднего фона
     }
 }
 
-
-
-struct MainView_Previews: PreviewProvider {
-    static var previews: some View {
-        MainView()
-    }
-}
-
-
-
-
 struct StretchableHeader: View
 {
     var image: Image
     var initialHeaderHeight: CGFloat = UIScreen.main.bounds.height * 0.25
+    var isInter: Bool
 
     var body: some View
     {
@@ -59,5 +54,19 @@ struct StretchableHeader: View
                 .aspectRatio(2, contentMode: .fill)
         })
         .frame(height: initialHeaderHeight)
+        .mask(Text(isInter ? "МЫ" : "ИНТЕР"))
     }
 }
+
+
+
+
+struct MainView_Previews: PreviewProvider {
+    static var previews: some View {
+        MainView()
+    }
+}
+
+
+
+
