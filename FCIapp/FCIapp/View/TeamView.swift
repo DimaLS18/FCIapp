@@ -22,34 +22,41 @@ struct PlayersByPositionView: View {
     let teamImage = Image("1")
 
     var body: some View {
-        List {
-            Section(header:
-                VStack {
-                    teamImage
-                        .resizable()
-                        .scaledToFill()
-                        .frame(height: 200)
+        GeometryReader { geometry in
+            let frame = geometry.frame(in: .global)
+            List {
+                Section(header:
+                    VStack {
+                        teamImage
+                            .resizable()
+                            .scaledToFill()
+                            .frame(height: frame.size.height * 0.5)
+                            .offset(y: frame.minY < 0 ? abs(frame.minY) : 0)
 
-                    Spacer()
+                        Spacer()
+                    }
+                    .frame(height: frame.size.height * 0.5)
+                    .clipped()
+                ) {
+                    Section(header: Text("Goalkeepers")) {
+                        PlayerRowView(players: players.filter { $0.position == "Goalkeeper" })
+                    }
+                    Section(header: Text("Defenders")) {
+                        PlayerRowView(players: players.filter { $0.position == "Defender" })
+                    }
+                    Section(header: Text("Midfielders")) {
+                        PlayerRowView(players: players.filter { $0.position == "Midfielder" })
+                    }
+                    Section(header: Text("Forwards")) {
+                        PlayerRowView(players: players.filter { $0.position == "Forward" })
+                    }
+                    Section(header: Text("Coaching Staff")) {
+                        PlayerRowView(players: players.filter { $0.position == "Coach" })
+                    }
                 }
-            ) {
-                Section(header: Text("Goalkeepers")) {
-                    PlayerRowView(players: players.filter { $0.position == "Goalkeeper" })
-                }
-                Section(header: Text("Defenders")) {
-                    PlayerRowView(players: players.filter { $0.position == "Defender" })
-                }
-                Section(header: Text("Midfielders")) {
-                    PlayerRowView(players: players.filter { $0.position == "Midfielder" })
-                }
-                Section(header: Text("Forwards")) {
-                    PlayerRowView(players: players.filter { $0.position == "Forward" })
-                }
-                Section(header: Text("Coaching Staff")) {
-                    PlayerRowView(players: players.filter { $0.position == "Coach" })
-                }
+                .listStyle(InsetGroupedListStyle())
             }
-            .listStyle(InsetGroupedListStyle())
+            .edgesIgnoringSafeArea(.top) // set to ignore top safe area
         }
     }
 }
@@ -59,18 +66,19 @@ struct PlayerRowView: View {
     let players: [Player]
 
     var body: some View {
-           ScrollView(.horizontal, showsIndicators: false) {
-               HStack(alignment: .top, spacing: 10) {
-                   ForEach(players) { player in
-                       PlayerView(player: player)
-                       Spacer() // add a spacer between each player view
-                   }
-               }
-               .padding(.horizontal)
-               .frame(height: 200)
-           }
-       }
-   }
+        ScrollView(.horizontal, showsIndicators: false) {
+            HStack(alignment: .top, spacing: 10) {
+                ForEach(players) { player in
+                    PlayerView(player: player)
+                    Spacer() // add a spacer between each player view
+                }
+            }
+            .padding(.horizontal)
+            .frame(height: 200)
+        }
+    }
+}
+
 
 
 struct PlayerView: View {
@@ -88,7 +96,7 @@ struct PlayerView: View {
             Text("Number: \(player.number)")
         }
         .padding()
-        .background(Color.black)
+        .background(Color.clear)
         .cornerRadius(10) // добавляем скругление углов для всей ячейки
         .shadow(radius: 5) // добавляем тень для всей ячейки
     }
