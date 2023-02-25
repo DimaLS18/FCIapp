@@ -17,10 +17,8 @@ struct ContentView: View {
                 .tabItem {
                     Label("Главная", systemImage: "soccerball")
                 }
-            GameScheduleView(games: [     Game(homeTeam: "ЦСКА", homeTeamLogo: "inter", awayTeam: "Динамо", awayTeamLogo: "inter", date: Date(), score: "2:1"),
-                                          Game(homeTeam: "Спартак", homeTeamLogo: "inter", awayTeam: "Локомотив", awayTeamLogo: "inter", date: Date().addingTimeInterval(86400), score: nil),
-                                          Game(homeTeam: "Зенит", homeTeamLogo: "inter", awayTeam: "Краснодар", awayTeamLogo: "inter", date: Date().addingTimeInterval(86400*2), score: nil)
-                                    ])
+            MatchTabView()
+
                 .tabItem {
                     Label("Игры", systemImage: "sportscourt")
                 }
